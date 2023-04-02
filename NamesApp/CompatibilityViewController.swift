@@ -21,8 +21,11 @@ final class CompatibilityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard firstName != nil, secondName != nil else { return }
         
         backButton.layer.cornerRadius = 10
+        compatibilityPV.transform = compatibilityPV.transform.scaledBy(x: 1, y: 4)
+        
         let resultValue = findResult()
         namesLabel.text = "\(firstName ?? "") and \(secondName ?? "")"
         
@@ -74,5 +77,4 @@ final class CompatibilityViewController: UIViewController {
     
         return result
     }
-    
 }
