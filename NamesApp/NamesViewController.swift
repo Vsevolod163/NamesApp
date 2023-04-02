@@ -23,16 +23,16 @@ final class NamesViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let compatibilityVC = segue.destination as? CompatibilityViewController else { return }
         
-        if firstNameTF.text?.isEmpty ?? false || secondNameTF.text?.isEmpty ?? false {
-            showAlert(title: "Empty name", message: "Enter your names 😊")
-            return
-        }
-        
         compatibilityVC.firstName = firstNameTF.text
         compatibilityVC.secondName = secondNameTF.text
     }
     
     @IBAction func resultButtonTapped() {
+        if firstNameTF.text?.isEmpty ?? false || secondNameTF.text?.isEmpty ?? false {
+            showAlert(title: "Empty name", message: "Enter your names 😊")
+            return
+        }
+        
         performSegue(withIdentifier: "goToCompatibility", sender: nil)
     }
     
@@ -47,10 +47,7 @@ final class NamesViewController: UIViewController {
             message: message,
             preferredStyle: .alert
         )
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            self.firstNameTF.text = ""
-            self.secondNameTF.text = ""
-        }
+        let okAction = UIAlertAction(title: "OK", style: .default)
         
         alert.addAction(okAction)
         present(alert, animated: true)
