@@ -164,7 +164,7 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="fhU-7Y-TYP" id="Hfx-ag-DCE"/>
-                        <outlet property="compatibilityPV" destination="Xeu-sO-Sl0" id="dBg-5b-GAN"/>
+                        <outlet property="compatibilityPV" destination="Xeu-sO-Sl0" id="Kfi-rF-QUO"/>
                         <outlet property="namesLabel" destination="G0c-l7-Cv9" id="jbL-Xb-AXO"/>
                         <outlet property="percentLabel" destination="0aN-Fz-dcb" id="JHD-8d-icb"/>
                     </connections>
